@@ -22,6 +22,7 @@
   min-height: clamp(34rem, 56vw, 48rem);
   height: auto;
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   align-items: center;
   border-radius: 2.25rem;
   background: #302b28;
@@ -135,10 +136,16 @@ details[open] .lab-hide { display: inline; }
   .atelier .header nav { gap: 1rem; }
   .atelier .hero-copy { max-width: 66%; }
 }
+@media (min-width: 701px) and (max-width: 860px) {
+  .atelier .header { position: relative; z-index: 5; }
+  .atelier .menu-toggle { display: block; font-size: .9rem; border: 1px solid var(--line); background: var(--paper); border-radius: 2rem; padding: .55rem 1rem; }
+  .atelier .header nav { display: none; position: absolute; top: 4.4rem; right: 0; background: var(--paper); border: 1px solid var(--line); border-radius: 1rem; padding: 1rem; box-shadow: var(--shadow); }
+  .atelier .header nav.open { display: flex; flex-direction: column; align-items: stretch; }
+}
 @media (max-width: 700px) {
   .atelier .header nav { top: 4.4rem; }
   .atelier .hero .world { padding-top: min(76vw, 24rem); border-radius: 1.55rem; min-height: 0; background: #2b2139; }
-  .atelier .world-image { height: min(87vw, 28rem); object-position: 87% center; }
+  .atelier .world-image { height: min(87vw, 28rem); object-position: 87% center; transform: none; }
   .atelier .world-shade { top: 0; height: min(87vw, 28rem); background: linear-gradient(0deg, #2b2139 2%, #2b213910 51%, transparent 70%); }
   .atelier .hero-copy { max-width: 100%; padding: 0 1.45rem 3.7rem; margin-top: -2.4rem; }
   .atelier .hero h1 { font-size: clamp(2.3rem, 9.8vw, 4rem); }
