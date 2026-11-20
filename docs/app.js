@@ -72,7 +72,15 @@ document.querySelectorAll('[data-agent]').forEach(button=>button.addEventListene
 }));
 if('IntersectionObserver' in window){
   const io=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');io.unobserve(entry.target);}}),{threshold:.08});
-  document.querySelectorAll('.section-heading,.intro .split,.approach .split,.contact').forEach(el=>{el.classList.add('reveal');io.observe(el);});
+  document.querySelectorAll('.section-heading,.family-photo,.family-story,.approach .split,.contact,.program-invite').forEach(el => {
+    el.classList.add('reveal');
+    io.observe(el);
+  });
+  document.querySelectorAll('.lab-card').forEach((card, index) => {
+    card.classList.add('reveal');
+    card.style.setProperty('--entrance-delay', `${(index % 3) * 75}ms`);
+    io.observe(card);
+  });
 }
 
 const tutorSubject=$('#tutor-subject'),tutorLevel=$('#tutor-level'),tutorMethod=$('#tutor-method');

@@ -1,0 +1,159 @@
+.atelier {
+  --paper: #fcf9ff;
+  --white: #fff;
+  --ink: #272137;
+  --deep: #241c36;
+  --muted: #5e536b;
+  --line: #e3d9ee;
+  --pale: #f0e7fa;
+  --lime: #dfc8ff;
+  --mint: #dcebd0;
+  --shadow: 0 14px 36px #452b6614;
+  background: radial-gradient(ellipse at 45% 0%, #f0e4ff 0%, transparent 38rem), var(--paper);
+}
+.atelier .section { padding-block: clamp(4rem, 8vw, 7.5rem); }
+.atelier .section-heading { gap: 3rem; }
+.atelier .section-aside { max-width: 33ch; }
+.atelier .header { padding-block: 1.35rem; }
+.atelier .brand { font-size: 1.25rem; }
+.atelier .nav-cta, .atelier .project-tabs button[aria-selected=true] { background: var(--deep); color: #fff; }
+.atelier .hero { padding-top: .4rem; }
+.atelier .world {
+  min-height: clamp(34rem, 56vw, 48rem);
+  height: auto;
+  display: grid;
+  align-items: center;
+  border-radius: 2.25rem;
+  background: #302b28;
+  color: #fffaf4;
+}
+.atelier .world-image { inset: 0; object-position: 62% center; }
+.atelier .world-shade {
+  background: linear-gradient(90deg, #211a2af5 0%, #211a2adc 20%, #211a2a80 44%, transparent 71%),
+    linear-gradient(0deg, #221a2a70 0%, transparent 30%);
+}
+.atelier .hero-copy {
+  position: relative;
+  display: block;
+  max-width: min(58%, 46rem);
+  padding: clamp(2.5rem, 5vw, 5rem);
+  margin: 0;
+}
+.atelier .hero-copy .eyebrow { color: #f1e3fa; margin-bottom: 1.4rem; font-size: .95rem; }
+.atelier .hero h1 { font-size: clamp(3rem, 6.1vw, 6.75rem); line-height: 1.03; font-weight: 500; }
+.atelier .hero h1 em { color: #e8d0ff; }
+.atelier .hero-description { margin: 1.6rem 0; max-width: 36ch; font-size: clamp(1rem, 1.4vw, 1.2rem); color: #fffaf4; }
+.atelier .hero .button { gap: .8em; }
+.atelier .motion-button { bottom: 1.15rem; right: 1.15rem; z-index: 2; background: #221a2acd; font-size: .77rem; }
+.atelier .hero-bottom { color: var(--muted); }
+.atelier .hero-bottom a:hover { text-decoration: underline; text-underline-offset: .24em; }
+.hero-glints { position: absolute; inset: 0; pointer-events: none; color: #fff3cb; }
+.hero-glints span { position: absolute; font-size: clamp(1rem, 3vw, 2.5rem); text-shadow: 0 0 1.2rem #ffe6a9; animation: glint 4.8s ease-in-out infinite; }
+.hero-glints span:nth-child(1) { left: 56%; top: 26%; }
+.hero-glints span:nth-child(2) { left: 67%; top: 58%; font-size: 1.4rem; animation-delay: -1.9s; }
+.hero-glints span:nth-child(3) { left: 84%; top: 32%; animation-delay: -3.3s; }
+@keyframes glint {
+  0%, 100% { translate: 0 0; opacity: .4; }
+  50% { translate: 0 -.75rem; opacity: 1; }
+}
+.atelier .hero-copy { animation: arrive .8s ease-out both; }
+@keyframes arrive {
+  from { transform: translateY(1rem); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.atelier .lab-grid { gap: clamp(1rem, 2.4vw, 2rem); }
+.atelier .lab-card { --lab-wash: #fae6ed; background: var(--lab-wash); border: 0; border-radius: 1.65rem; box-shadow: var(--shadow); }
+.atelier #study-lab { --lab-wash: #eadefa; }
+.atelier #film-lab { --lab-wash: #efe1f1; }
+.atelier #digital-lab { --lab-wash: #def1e9; }
+.atelier #media-lab { --lab-wash: #fae6db; }
+.atelier #research-lab { --lab-wash: #e7efda; }
+.atelier .lab-card summary { padding: 0; display: block; }
+.atelier .lab-card summary:focus-visible { outline-offset: -5px; }
+.lab-image { position: relative; display: block; aspect-ratio: 1.5; overflow: hidden; background: var(--lab-wash); }
+.lab-image img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .65s cubic-bezier(.2,.76,.3,1); }
+.atelier .lab-card summary:hover img, .atelier .lab-card[open] img { transform: scale(1.045); }
+.lab-caption { position: absolute; bottom: .85rem; left: .85rem; max-width: calc(100% - 1.7rem); border-radius: 2rem; padding: .45rem .75rem; background: #251c32e8; color: #fff; font-size: .76rem; }
+.lab-summary { display: block; padding: 1.4rem 1.55rem 1.05rem; }
+.atelier .lab-card strong { font-size: clamp(1.12rem, 2vw, 1.55rem); }
+.atelier .lab-teaser { display: block; margin-top: .75rem; min-height: 3.1em; color: var(--ink); }
+.atelier .lab-more { border-color: #33264130; margin-top: .8rem; padding-top: .6rem; font-weight: 700; }
+.lab-hide, details[open] .lab-show { display: none; }
+details[open] .lab-hide { display: inline; }
+.atelier .lab-card[open] .lab-content { animation: arrive .32s ease-out both; }
+.atelier .lab-content .lab-result { background: #ffffff9e; }
+.family-scene { display: grid; align-items: center; grid-template-columns: 1.03fr 1fr; gap: clamp(2rem, 6vw, 7rem); border-top: 1px solid var(--line); }
+.family-photo { position: relative; margin: 0; padding: .7rem; background: #fff; border-radius: 1.5rem; box-shadow: var(--shadow); rotate: -2deg; }
+.family-photo img { display: block; width: 100%; height: auto; border-radius: 1.05rem; }
+.family-photo figcaption { padding: .7rem .5rem .15rem; font-size: .82rem; color: var(--muted); }
+.family-story > p { margin-top: 1.25rem; }
+.family-timeline { padding: 0; list-style: none; counter-reset: step; }
+.family-timeline li { position: relative; counter-increment: step; padding: .85rem 0 .85rem 3.25rem; border-top: 1px solid var(--line); }
+.family-timeline li::before { content: counter(step); position: absolute; left: 0; top: .9rem; display: grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%; background: var(--mint); font-weight: 700; }
+.family-timeline strong, .family-timeline span { display: block; }
+.family-timeline span { color: var(--muted); font-size: .94rem; }
+.atelier .tutor-workshop { background: #e9dafb; color: var(--ink); }
+.atelier .tutor-workshop h2 em, .atelier .tutor-workshop .eyebrow { color: #5b3d77; }
+.atelier .tutor-intro, .atelier .tutor-controls label { color: var(--muted); }
+.atelier .tutor-controls select { background-color: #fff; border-color: #b9a8c8; color: var(--ink); background-image: none; appearance: auto; padding-right: .9rem; }
+.atelier .tutor-instruction { background: #fff; border-color: #d9c6ee; box-shadow: var(--shadow); }
+.atelier .tutor-instruction .pill, .atelier .tutor-instruction .tutor-caption, .atelier .copy-status { color: var(--muted); }
+.atelier .project-stage { box-shadow: var(--shadow); }
+.atelier .project-art { padding: 0; min-height: 23rem; background: var(--mint); }
+.project-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.atelier .project-image { animation: arrive .45s ease-out both; }
+.atelier .agent-lab, .atelier .lab-visual { background: var(--deep); }
+.atelier .lab-visual { isolation: isolate; overflow: hidden; }
+.agent-poster { position: absolute; z-index: -2; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.atelier .lab-visual::before { content: ""; background: #22192b70; position: absolute; inset: 0; z-index: -1; }
+.atelier .lab-visual.model-ready::before { background: #22192bb8; }
+.atelier .agent-core { background: var(--mint); }
+.atelier .agent-node { background: #292032; color: #fff; border-color: #f2e4f6b0; }
+.atelier .agent-node.active, .atelier .agent-node:hover { background: #ebd8ff; color: var(--ink); border-color: #ebd8ff; }
+.atelier .program { background: #efe6f7; }
+.atelier .program .primary { background: var(--ink); color: #fff; }
+.atelier .program .primary:hover { background: #583d6d; }
+.atelier .program .section-aside a { margin-top: .9rem; }
+.program-invite { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(2rem, 6vw, 6rem); align-items: center; }
+.program-invite p { max-width: 42ch; margin-top: 1.3rem; }
+.program-preview { display: grid; gap: .65rem; }
+.program-preview a { display: grid; gap: .2rem; padding: 1rem 1.2rem; border-radius: 1rem; background: #ffffffb0; transition: background .2s; }
+.program-preview a:hover { background: #fff; }
+.program-preview a span { color: var(--muted); font-size: .85rem; }
+.atelier .contact { background: #e9dafb; color: var(--ink); }
+.atelier .contact h2 em { color: #614084; }
+.atelier .contact-decor { color: #d4b6f2; }
+.atelier .contact-bottom p { color: var(--muted); }
+.atelier .contact-bottom .button { background: var(--ink); color: #fff; }
+.atelier .faq, .atelier .footer { color: var(--ink); }
+.atelier .reveal { transition-delay: var(--entrance-delay, 0ms); }
+.no-motion.atelier .lab-card summary:hover img, .no-motion.atelier .lab-card[open] img { transform: none; }
+.atelier .world:focus-within button:focus-visible, .atelier .world a:focus-visible,
+.atelier .agent-lab :focus-visible { outline-color: #fff; }
+
+@media (max-width: 960px) {
+  .atelier .header nav { gap: 1rem; }
+  .atelier .hero-copy { max-width: 66%; }
+}
+@media (max-width: 700px) {
+  .atelier .header nav { top: 4.4rem; }
+  .atelier .hero .world { padding-top: min(76vw, 24rem); border-radius: 1.55rem; min-height: 0; background: #2b2139; }
+  .atelier .world-image { height: min(87vw, 28rem); object-position: 87% center; }
+  .atelier .world-shade { top: 0; height: min(87vw, 28rem); background: linear-gradient(0deg, #2b2139 2%, #2b213910 51%, transparent 70%); }
+  .atelier .hero-copy { max-width: 100%; padding: 0 1.45rem 3.7rem; margin-top: -2.4rem; }
+  .atelier .hero h1 { font-size: clamp(2.3rem, 9.8vw, 4rem); }
+  .atelier .hero h1 br { display: none; }
+  .atelier .hero-copy .eyebrow { font-size: .86rem; margin-bottom: .75rem; max-width: 27ch; }
+  .atelier .hero-description { margin: 1.1rem 0; font-size: .99rem; }
+  .atelier .hero-bottom > span { display: none; }
+  .atelier .hero-bottom > div { margin-top: 0; flex-wrap: wrap; }
+  .hero-glints { max-height: 18rem; }
+  .atelier .motion-button { bottom: .75rem; right: .75rem; }
+  .atelier .lab-summary { padding-inline: 1.3rem; }
+  .atelier .lab-teaser { min-height: initial; }
+  .family-scene { grid-template-columns: 1fr; }
+  .program-invite { grid-template-columns: 1fr; }
+  .family-photo { rotate: 0deg; }
+  .atelier .project-art { min-height: 17rem; }
+  .atelier .tutor-controls select { min-width: 0; }
+}
